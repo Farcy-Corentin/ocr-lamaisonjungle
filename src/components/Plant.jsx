@@ -2,9 +2,9 @@ import "../styles/Plant.css"
 import {CareScale} from "./CareScale";
 
 
-export const Plant = ({ name, cover, id, light, water }) => {
+export const Plant = ({ name, cover, light, water }) => {
   return (
-      <li key={`${name}-${id}`} className="lmj-plant-item">
+      <li className="lmj-plant-item">
           <img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
           {name}
           <div>
