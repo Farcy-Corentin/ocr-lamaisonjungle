@@ -1,5 +1,5 @@
 import "../styles/Cart.css"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export const Cart = ({cart,updateCart}) => {
     const [isOpen, setIsOpen] = useState(true)
@@ -7,6 +7,10 @@ export const Cart = ({cart,updateCart}) => {
         (acc, plantType) => acc + plantType.amount * plantType.price,
         0
     )
+
+    useEffect(() => {
+        document.title = `LMJ: ${total}€ d'achats`
+    }, [total])
 
     return isOpen ? (
         <div className='lmj-cart'>
